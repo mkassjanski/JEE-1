@@ -1,7 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-<<<<<<< HEAD
   <groupId>kass</groupId>
   <artifactId>dziennik</artifactId>
   <packaging>war</packaging>
@@ -81,24 +80,7 @@
 					</webAppConfig>
 				</configuration>
 			</plugin>
-		</plugins>
-=======
-  <groupId>renata</groupId>
-  <artifactId>lab2</artifactId>
-  <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>lab2 Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>lab2</finalName>
->>>>>>> dc1ec3f49e605cc29e75bae8bbd1740f3a1c1658
-  </build>
+</plugins>
+	</build>
+
 </project>
