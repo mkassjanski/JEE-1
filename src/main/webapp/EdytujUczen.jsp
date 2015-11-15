@@ -51,7 +51,7 @@
         <label>Pesel: &nbsp;</label><input type="text" name="pesel" value='<jsp:getProperty name="uczen" property="pesel"></jsp:getProperty>'  /><br />
     </p>
     <p><input type="submit" value=" OK "></p>
-    <p class="ukryty"><input type="text" name="id" value='<jsp:getProperty name="uczen" property="id"></jsp:getProperty>' /></p>
+    <p><input type="hidden" name="id" value='<jsp:getProperty name="uczen" property="id"></jsp:getProperty>' /></p>
 </form>
 <form  action='showAllUczen.jsp'>
 <input type='submit' value='Anuluj'>

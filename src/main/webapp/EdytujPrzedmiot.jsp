@@ -49,7 +49,7 @@
         <label>Liczba godzin: &nbsp;</label><input type="text" name="godz" value='<jsp:getProperty name="przedmiot" property="godz"></jsp:getProperty>'  /><br />
     </p>
     <p><input type="submit" value=" OK "></p>
-    <p class="ukryty"><input type="text" name="id" value='<jsp:getProperty name="przedmiot" property="id"></jsp:getProperty>' /></p>
+    <p><input type="hidden" name="id" value='<jsp:getProperty name="przedmiot" property="id"></jsp:getProperty>' /></p>
 </form>
 <form  action='showAllPrzedmiot.jsp'>
 <input type='submit' value='Anuluj'>
