@@ -14,6 +14,7 @@
 
   Imie :<input type="text" name="imie" value="" /><br />
   Nazwisko :<input type="text" name="nazwisko" value="" /><br />
+  Plec :<input type="text" name="plec" value="" /><br />
   Twój pesel:<input type="text"  name="pesel" value="" /><br />
   <input type="submit" value=" OK ">
   

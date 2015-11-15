@@ -49,6 +49,9 @@ public final class showAllUczen_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("<head>\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("<title>Insert title here</title>\n");
+      out.write("<style type=\"text/css\">\n");
+      out.write(".ukryty {visibility: hidden; width: 1px; height: 1px; font-size: 1px; margin: 0px ; padding: 0px}\n");
+      out.write("</style>\n");
       out.write("</head>\n");
       out.write("<body>\n");
       kass.service.StorageService storage = null;
@@ -60,14 +63,28 @@ public final class showAllUczen_jsp extends org.apache.jasper.runtime.HttpJspBas
         }
       }
       out.write('\n');
+      org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("uczen"), request);
+      out.write('\n');
 
   for (Uczen uczen : storage.getAllUczen()) {
-	  out.println("<p>Imie: " + uczen.getImie() + "; Nazwisko: " + uczen.getNazwisko() + " Pesel: "+ uczen.getPesel() +"</p>");
+	  out.println("<p>Imie: " + uczen.getImie() + "; Nazwisko: " + uczen.getNazwisko() + "; Plec " + uczen.getPlec() + "; Pesel: "+ uczen.getPesel() + 
+			  "<form  action='UsunUczen.jsp'>" +
+			  "<input type='submit' value='Usuń'>" +
+			  "<input class='ukryty' type='text' name='id' value='"+uczen.getId()+"'>" +
+			  "</form>" 
+				+
+			  "<form  action='EdytujUczen.jsp'>" +
+			  "<input type='submit' value='Edytuj'>" +
+			  "<input class='ukryty' type='text' name='id' value='"+uczen.getId()+"'>" +
+			  "</form>"
+			  +
+	  
+	  "</p>");
   }
 
       out.write("\n");
       out.write("<p>\n");
-      out.write("  <a href=\"getUczenData.jsp\">Add another person</a>\n");
+      out.write("  <a href=\"/dziennik/form\">Add another person</a>\n");
       out.write("</p>\n");
       out.write("</body>\n");
       out.write("</html>");

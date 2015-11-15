@@ -11,11 +11,12 @@
 <jsp:setProperty name="uczen" property="*" />
 <jsp:useBean id="storage" class="kass.service.StorageService" scope="application" />
 <%
-storage.add(uczen);
+storage.dodajUczen(uczen);
 %>
 <p>Following person has been added to storage: </p>
 <p>Imie:  <jsp:getProperty name="uczen" property="imie"></jsp:getProperty> </p>
 <p>Nazwisko:  <jsp:getProperty name="uczen" property="nazwisko"></jsp:getProperty> </p>
+<p>Plec: <jsp:getProperty name="uczen" property="plec"></jsp:getProperty></p>
 <p>Pesel: <jsp:getProperty name="uczen" property="pesel"></jsp:getProperty></p>
 <p>
   <a href="showAllUczen.jsp">Show all persons</a>

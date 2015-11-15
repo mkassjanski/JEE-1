@@ -1,18 +1,27 @@
 package kass.domain;
 
 public class Uczen {
-private String imie;
-private String nazwisko;
-private int pesel;
+private int id=0;
+private String imie ="";
+private String nazwisko="";
+private String plec="";
+private long pesel;
 
 	public Uczen(){
 		super();
 	}
-	public Uczen(String imie, String nazwisko, int pesel){
+	public Uczen(String imie, String nazwisko, String plec, long pesel){
 		super();
 		this.imie=imie;
 		this.nazwisko=nazwisko;
 		this.pesel=pesel;
+		this.plec=plec;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getImie(){
 		return imie;
@@ -20,7 +29,7 @@ private int pesel;
 	public String getNazwisko(){
 		return nazwisko;
 	}
-	public int getPesel(){
+	public long getPesel(){
 		return pesel;
 	}
 	public void setImie(String imie){
@@ -29,7 +38,13 @@ private int pesel;
 	public void setNazwisko(String nazwisko){
 		this.nazwisko=nazwisko;
 	}
-	public void setPesel(int pesel){
+	public void setPesel(long pesel){
 		this.pesel=pesel;
+	}
+	public String getPlec() {
+		return plec;
+	}
+	public void setPlec(String plec) {
+		this.plec = plec;
 	}
 }

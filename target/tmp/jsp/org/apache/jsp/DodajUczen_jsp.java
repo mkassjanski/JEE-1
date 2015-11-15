@@ -70,7 +70,7 @@ public final class DodajUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
       }
       out.write('\n');
 
-storage.add(uczen);
+storage.dodajUczen(uczen);
 
       out.write("\n");
       out.write("<p>Following person has been added to storage: </p>\n");
@@ -80,6 +80,9 @@ storage.add(uczen);
       out.write("<p>Nazwisko:  ");
       out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Uczen)_jspx_page_context.findAttribute("uczen")).getNazwisko())));
       out.write(" </p>\n");
+      out.write("<p>Plec: ");
+      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Uczen)_jspx_page_context.findAttribute("uczen")).getPlec())));
+      out.write("</p>\n");
       out.write("<p>Pesel: ");
       out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Uczen)_jspx_page_context.findAttribute("uczen")).getPesel())));
       out.write("</p>\n");
