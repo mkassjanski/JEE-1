@@ -3,8 +3,9 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import kass.domain.Przedmiot;
 
-public final class DodajUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class showAllPrzedmiot_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -42,25 +43,15 @@ public final class DodajUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n");
       out.write("<html>\n");
       out.write("<head>\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("<title>Insert title here</title>\n");
+      out.write("<title>Dodaj ucznia</title>\n");
       out.write("</head>\n");
       out.write("<body>\n");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/header.jsp", out, false);
-      out.write('\n');
-      kass.domain.Uczen uczen = null;
-      synchronized (session) {
-        uczen = (kass.domain.Uczen) _jspx_page_context.getAttribute("uczen", PageContext.SESSION_SCOPE);
-        if (uczen == null){
-          uczen = new kass.domain.Uczen();
-          _jspx_page_context.setAttribute("uczen", uczen, PageContext.SESSION_SCOPE);
-        }
-      }
-      out.write('\n');
-      org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("uczen"), request);
       out.write('\n');
       kass.service.StorageService storage = null;
       synchronized (application) {
@@ -71,29 +62,42 @@ public final class DodajUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
         }
       }
       out.write('\n');
+      org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("przedmiot"), request);
+      out.write("\n");
+      out.write("<br>\n");
+      out.write("<table class=\"zui-table zui-table-horizontal zui-table-highlight\">\n");
+      out.write("    <thead>\n");
+      out.write("        <tr>\n");
+      out.write("            <th>Nazwa</th>\n");
+      out.write("            <th>Typ</th>\n");
+      out.write("            <th>Liczba godzin</th>\n");
+      out.write("            <th>Opcje</th>\n");
+      out.write("        </tr>\n");
+      out.write("    </thead>\n");
+      out.write("    <tbody>\n");
 
-storage.dodajUczen(uczen);
+  for (Przedmiot przedmiot : storage.getAllPrzedmiot()) {
+	  out.println("<tr>");
+	  out.println("<td>" + przedmiot.getNazwa() + "</td>"+
+			  "<td>" + przedmiot.getTyp() + "</td>"+
+			  "<td>" + przedmiot.getGodz() + "</td>"+
+			  "<td>" + "<form  action='UsunPrzedmiot.jsp' method='post'>" +
+			  "<input type='submit' value='Usuń'>" +
+			  "<input class='ukryty' type='text' name='id' value='"+przedmiot.getId()+"'>" +
+			  "</form>" 
+				+
+			  "<form  action='EdytujPrzedmiot.jsp' method='post'>" +
+			  "<input type='submit' value='Edytuj'>" +
+			  "<input class='ukryty' type='text' name='id' value='"+przedmiot.getId()+"'>" +
+			  "</form>" + "</td>" + "</tr>");
+  }
 
       out.write("\n");
-      out.write("<p>Do bazy zostal dodany uczeń z poniżczymi danymi: </p>\n");
-      out.write("<p>Imie:  ");
-      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Uczen)_jspx_page_context.findAttribute("uczen")).getImie())));
-      out.write(" </p>\n");
-      out.write("<p>Nazwisko:  ");
-      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Uczen)_jspx_page_context.findAttribute("uczen")).getNazwisko())));
-      out.write(" </p>\n");
-      out.write("<p>Plec: ");
-      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Uczen)_jspx_page_context.findAttribute("uczen")).getPlec())));
-      out.write("</p>\n");
-      out.write("<p>Pesel: ");
-      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Uczen)_jspx_page_context.findAttribute("uczen")).getPesel())));
-      out.write("</p>\n");
-      out.write("<form  action='http://localhost:8080/dziennik/form'>\n");
-      out.write("<input type='submit' value='Dodaj kolejnego ucznia'>\n");
-      out.write("</form>\n");
+      out.write("</tbody>\n");
+      out.write("</table>\n");
       out.write("<br>\n");
-      out.write("<form  action='showAllUczen.jsp'>\n");
-      out.write("<input type='submit' value='Zobacz wszystkich ucznów'>\n");
+      out.write(" <form  action='http://localhost:8080/dziennik/form2'>\n");
+      out.write("<input type='submit' value='Dodaj przedmiot'>\n");
       out.write("</form>\n");
       out.write("</body>\n");
       out.write("</html>");

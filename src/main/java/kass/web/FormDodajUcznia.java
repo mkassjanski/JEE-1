@@ -19,8 +19,9 @@ public class FormDodajUcznia extends HttpServlet  {
 	throws ServletException, IOException {
 	response.setContentType("text/html");
 	PrintWriter out = response.getWriter();
-	out.println("<html><body><h2>Simple form servlet</h2>" +
-	"<form action='DodajUczen.jsp'>" +
+	out.println("<html><link rel='stylesheet' type='text/css' href='include/dziennik.css'><body><nav><ul><li><a href='/dziennik'>Home</a></li><li><a href='/dziennik/showAllUczen.jsp'>Lista uczniów</a></li><li><a href='/dziennik/showAllNauczyciel.jsp'>Lista nauczycieli</a></li></ul></nav></br>" +
+	"<p>Formularz dodania nowego ucznia</p>"+
+	"<form action='DodajUczen.jsp' method='post'>" +
 	"Imie: <input type='text' name='imie' /> <br />" +
 	"Nazwisko: <input type='text' name='nazwisko' /> <br />" +
 	"Plec:<br>"+
@@ -31,5 +32,10 @@ public class FormDodajUcznia extends HttpServlet  {
 	"</form>" +
 	"</body></html>");
 	out.close();
+	
+	
+	
+	
+	
 	}
 }

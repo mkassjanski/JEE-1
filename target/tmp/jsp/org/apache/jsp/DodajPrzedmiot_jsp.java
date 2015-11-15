@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class DodajUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class DodajPrzedmiot_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -51,16 +51,16 @@ public final class DodajUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<body>\n");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/header.jsp", out, false);
       out.write('\n');
-      kass.domain.Uczen uczen = null;
+      kass.domain.Przedmiot przedmiot = null;
       synchronized (session) {
-        uczen = (kass.domain.Uczen) _jspx_page_context.getAttribute("uczen", PageContext.SESSION_SCOPE);
-        if (uczen == null){
-          uczen = new kass.domain.Uczen();
-          _jspx_page_context.setAttribute("uczen", uczen, PageContext.SESSION_SCOPE);
+        przedmiot = (kass.domain.Przedmiot) _jspx_page_context.getAttribute("przedmiot", PageContext.SESSION_SCOPE);
+        if (przedmiot == null){
+          przedmiot = new kass.domain.Przedmiot();
+          _jspx_page_context.setAttribute("przedmiot", przedmiot, PageContext.SESSION_SCOPE);
         }
       }
       out.write('\n');
-      org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("uczen"), request);
+      org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("przedmiot"), request);
       out.write('\n');
       kass.service.StorageService storage = null;
       synchronized (application) {
@@ -72,28 +72,25 @@ public final class DodajUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
       }
       out.write('\n');
 
-storage.dodajUczen(uczen);
+storage.dodajPrzedmiot(przedmiot);
 
       out.write("\n");
       out.write("<p>Do bazy zostal dodany uczeń z poniżczymi danymi: </p>\n");
-      out.write("<p>Imie:  ");
-      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Uczen)_jspx_page_context.findAttribute("uczen")).getImie())));
+      out.write("<p>Nazwa:  ");
+      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Przedmiot)_jspx_page_context.findAttribute("przedmiot")).getNazwa())));
       out.write(" </p>\n");
-      out.write("<p>Nazwisko:  ");
-      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Uczen)_jspx_page_context.findAttribute("uczen")).getNazwisko())));
+      out.write("<p>Typ:  ");
+      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Przedmiot)_jspx_page_context.findAttribute("przedmiot")).getTyp())));
       out.write(" </p>\n");
-      out.write("<p>Plec: ");
-      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Uczen)_jspx_page_context.findAttribute("uczen")).getPlec())));
+      out.write("<p>Liczba godzin: ");
+      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Przedmiot)_jspx_page_context.findAttribute("przedmiot")).getGodz())));
       out.write("</p>\n");
-      out.write("<p>Pesel: ");
-      out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Uczen)_jspx_page_context.findAttribute("uczen")).getPesel())));
-      out.write("</p>\n");
-      out.write("<form  action='http://localhost:8080/dziennik/form'>\n");
-      out.write("<input type='submit' value='Dodaj kolejnego ucznia'>\n");
+      out.write("<form  action='http://localhost:8080/dziennik/form2'>\n");
+      out.write("<input type='submit' value='Dodaj kolejne przedmioty'>\n");
       out.write("</form>\n");
       out.write("<br>\n");
-      out.write("<form  action='showAllUczen.jsp'>\n");
-      out.write("<input type='submit' value='Zobacz wszystkich ucznów'>\n");
+      out.write("<form  action='showAllPrzedmiot.jsp'>\n");
+      out.write("<input type='submit' value='Zobacz wszystkie przedmioty'>\n");
       out.write("</form>\n");
       out.write("</body>\n");
       out.write("</html>");

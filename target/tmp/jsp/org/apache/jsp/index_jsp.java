@@ -42,8 +42,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("<html>\n");
+      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"include/dziennik.css\">\n");
       out.write("<body>\n");
-      out.write("<h2>Hello World!</h2>\n");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/header.jsp", out, false);
+      out.write("\n");
       out.write("</body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

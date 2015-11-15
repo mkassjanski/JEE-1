@@ -1,5 +1,6 @@
 <html>
+<link rel="stylesheet" type="text/css" href="include/dziennik.css">
 <body>
-<h2>Hello World!</h2>
+<jsp:include page="include/header.jsp" />
 </body>
 </html>

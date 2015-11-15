@@ -47,6 +47,8 @@ public final class EndEdytujUczen_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n");
       out.write("<html>\n");
       out.write("<head>\n");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/header.jsp", out, false);
+      out.write('\n');
       kass.domain.Uczen uczen = null;
       synchronized (session) {
         uczen = (kass.domain.Uczen) _jspx_page_context.getAttribute("uczen", PageContext.SESSION_SCOPE);
@@ -76,7 +78,6 @@ public final class EndEdytujUczen_jsp extends org.apache.jasper.runtime.HttpJspB
         }
       }
       out.write("\n");
-      out.write("\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("<title>Insert title here</title>\n");
       out.write("</head>\n");
@@ -93,7 +94,10 @@ public final class EndEdytujUczen_jsp extends org.apache.jasper.runtime.HttpJspB
  					storage.edytujUczen(uczen, nowy);
             
       out.write("\n");
-      out.write("            <p>Wprowadziłeś dane!!!</p>\n");
+      out.write("            <h1>Uczeń został zaktualizowany.</h1>\n");
+      out.write("<form  action='showAllUczen.jsp'>\n");
+      out.write("<input type='submit' value='Zobacz wszystkich ucznów'>\n");
+      out.write("</form>\n");
       out.write("</body>\n");
       out.write("</html>");
     } catch (Throwable t) {

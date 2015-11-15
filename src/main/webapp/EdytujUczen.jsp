@@ -6,12 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style rel="stylesheet" type="text/css">
-        .ukryty     {visibility: hidden; width: 1px;  height: 1px; font-size: 1px; margin: 0px ; padding: 0px}
-    </style>
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="include/header.jsp" />
 <jsp:useBean id="storage" class="kass.service.StorageService" scope="application" />
 <jsp:useBean id="uczenTEMP" class="kass.domain.Uczen" scope="session" />
 <jsp:useBean id="uczen" class="kass.domain.Uczen" scope="session" />
@@ -30,7 +28,7 @@
     }
 %>
 
-<form action="EndEdytujUczen.jsp">
+<form action="EndEdytujUczen.jsp" method='post'>
     <p>
         <label>Imie: &nbsp;</label><input type="text" name="imie" value='<jsp:getProperty name="uczen" property="imie"></jsp:getProperty>' /><br />
         <label>Nazwisko: </label><input type="text" name="nazwisko" value='<jsp:getProperty name="uczen" property="nazwisko"></jsp:getProperty>'  /><br />
@@ -54,6 +52,9 @@
     </p>
     <p><input type="submit" value=" OK "></p>
     <p class="ukryty"><input type="text" name="id" value='<jsp:getProperty name="uczen" property="id"></jsp:getProperty>' /></p>
+</form>
+<form  action='showAllUczen.jsp'>
+<input type='submit' value='Anuluj'>
 </form>
 </body>
 </html>

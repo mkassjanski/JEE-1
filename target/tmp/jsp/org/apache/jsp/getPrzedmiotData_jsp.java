@@ -3,9 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import kass.domain.Uczen;
 
-public final class UsunUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class getPrzedmiotData_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -43,52 +42,28 @@ public final class UsunUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
-      out.write("\n");
-      out.write("    \n");
-      out.write("<!DOCTYPE html>\n");
+      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n");
       out.write("<html>\n");
       out.write("<head>\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("<title>Insert title here</title>\n");
       out.write("</head>\n");
       out.write("<body>\n");
-      out.write(" ");
-      kass.domain.Uczen uczenTEMP = null;
-      synchronized (session) {
-        uczenTEMP = (kass.domain.Uczen) _jspx_page_context.getAttribute("uczenTEMP", PageContext.SESSION_SCOPE);
-        if (uczenTEMP == null){
-          uczenTEMP = new kass.domain.Uczen();
-          _jspx_page_context.setAttribute("uczenTEMP", uczenTEMP, PageContext.SESSION_SCOPE);
-        }
-      }
-      out.write('\n');
-      kass.service.StorageService storage = null;
-      synchronized (application) {
-        storage = (kass.service.StorageService) _jspx_page_context.getAttribute("storage", PageContext.APPLICATION_SCOPE);
-        if (storage == null){
-          storage = new kass.service.StorageService();
-          _jspx_page_context.setAttribute("storage", storage, PageContext.APPLICATION_SCOPE);
-        }
-      }
-      out.write('\n');
-      org.apache.jasper.runtime.JspRuntimeLibrary.introspecthelper(_jspx_page_context.findAttribute("uczenTEMP"), "id", request.getParameter("id"), request, "id", false);
-      out.write('\n');
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/header.jsp", out, false);
-      out.write('\n');
-
-    Uczen uczen = new Uczen();
-    for (Uczen uczenTEM : storage.getAllUczen()) {
-        if(uczenTEM.getId() == uczenTEMP.getId()) {
-            uczen.setId(uczenTEM.getId());
-            break;
-        }
-    }
-    storage.usunUczen(uczen);
-
+      out.write("<form action=\"form2\" method=\"post\" >\n");
+      out.write("    Name: <input name=\"nazwa\" />\n");
       out.write("\n");
-      out.write(" <h1>Uczeń został usunięty.</h1>\n");
-      out.write("<form  action='showAllUczen.jsp'>\n");
-      out.write("<input type='submit' value='Zobacz wszystkich ucznów'>\n");
+      out.write("    <br/><br/>\n");
+      out.write("\n");
+      out.write("    Obowiązkowy: <input name=\"typ\" type=\"checkbox\" checked>\n");
+      out.write("\n");
+      out.write("    <br/><br/>\n");
+      out.write("\n");
+      out.write(" Liczba godz: <input name=\"godz\" />\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("    <br/>\n");
+      out.write("\n");
+      out.write("    <input type=\"submit\" value=\"Send\" />\n");
       out.write("</form>\n");
       out.write("</body>\n");
       out.write("</html>");

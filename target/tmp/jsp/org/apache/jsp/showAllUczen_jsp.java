@@ -48,12 +48,11 @@ public final class showAllUczen_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("<html>\n");
       out.write("<head>\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("<title>Insert title here</title>\n");
-      out.write("<style type=\"text/css\">\n");
-      out.write(".ukryty {visibility: hidden; width: 1px; height: 1px; font-size: 1px; margin: 0px ; padding: 0px}\n");
-      out.write("</style>\n");
+      out.write("<title>Dodaj ucznia</title>\n");
       out.write("</head>\n");
       out.write("<body>\n");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/header.jsp", out, false);
+      out.write('\n');
       kass.service.StorageService storage = null;
       synchronized (application) {
         storage = (kass.service.StorageService) _jspx_page_context.getAttribute("storage", PageContext.APPLICATION_SCOPE);
@@ -64,28 +63,44 @@ public final class showAllUczen_jsp extends org.apache.jasper.runtime.HttpJspBas
       }
       out.write('\n');
       org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("uczen"), request);
-      out.write('\n');
+      out.write("\n");
+      out.write("<br>\n");
+      out.write("<table class=\"zui-table zui-table-horizontal zui-table-highlight\">\n");
+      out.write("    <thead>\n");
+      out.write("        <tr>\n");
+      out.write("            <th>Imie</th>\n");
+      out.write("            <th>Nazwisko</th>\n");
+      out.write("            <th>Plec</th>\n");
+      out.write("            <th>Pesel</th>\n");
+      out.write("            <th>Opcje</th>\n");
+      out.write("        </tr>\n");
+      out.write("    </thead>\n");
+      out.write("    <tbody>\n");
 
   for (Uczen uczen : storage.getAllUczen()) {
-	  out.println("<p>Imie: " + uczen.getImie() + "; Nazwisko: " + uczen.getNazwisko() + "; Plec " + uczen.getPlec() + "; Pesel: "+ uczen.getPesel() + 
-			  "<form  action='UsunUczen.jsp'>" +
+	  out.println("<tr>");
+	  out.println("<td>" + uczen.getImie() + "</td>"+
+			  "<td>" + uczen.getNazwisko() + "</td>"+
+			  "<td>" + uczen.getPlec() + "</td>"+
+			  "<td>" + uczen.getPesel() + "</td>"+
+			  "<td>" + "<form  action='UsunUczen.jsp' method='post'>" +
 			  "<input type='submit' value='Usuń'>" +
 			  "<input class='ukryty' type='text' name='id' value='"+uczen.getId()+"'>" +
 			  "</form>" 
 				+
-			  "<form  action='EdytujUczen.jsp'>" +
+			  "<form  action='EdytujUczen.jsp' method='post'>" +
 			  "<input type='submit' value='Edytuj'>" +
 			  "<input class='ukryty' type='text' name='id' value='"+uczen.getId()+"'>" +
-			  "</form>"
-			  +
-	  
-	  "</p>");
+			  "</form>" + "</td>" + "</tr>");
   }
 
       out.write("\n");
-      out.write("<p>\n");
-      out.write("  <a href=\"/dziennik/form\">Add another person</a>\n");
-      out.write("</p>\n");
+      out.write("</tbody>\n");
+      out.write("</table>\n");
+      out.write("<br>\n");
+      out.write(" <form  action='http://localhost:8080/dziennik/form'>\n");
+      out.write("<input type='submit' value='Dodaj ucznia'>\n");
+      out.write("</form>\n");
       out.write("</body>\n");
       out.write("</html>");
     } catch (Throwable t) {
