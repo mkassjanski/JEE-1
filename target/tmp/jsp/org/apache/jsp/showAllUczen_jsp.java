@@ -85,12 +85,12 @@ public final class showAllUczen_jsp extends org.apache.jasper.runtime.HttpJspBas
 			  "<td>" + uczen.getPesel() + "</td>"+
 			  "<td>" + "<form  action='UsunUczen.jsp' method='post'>" +
 			  "<input type='submit' value='Usuń'>" +
-			  "<input class='ukryty' type='text' name='id' value='"+uczen.getId()+"'>" +
+			  "<input type='hidden' name='id' value='"+uczen.getId()+"'>" +
 			  "</form>" 
 				+
 			  "<form  action='EdytujUczen.jsp' method='post'>" +
 			  "<input type='submit' value='Edytuj'>" +
-			  "<input class='ukryty' type='text' name='id' value='"+uczen.getId()+"'>" +
+			  "<input type='hidden' name='id' value='"+uczen.getId()+"'>" +
 			  "</form>" + "</td>" + "</tr>");
   }
 

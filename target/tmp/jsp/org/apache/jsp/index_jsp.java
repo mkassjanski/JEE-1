@@ -30,7 +30,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html");
+      response.setContentType("text/html; charset=UTF-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -41,12 +41,19 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\n");
       out.write("<html>\n");
       out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"include/dziennik.css\">\n");
       out.write("<body>\n");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/header.jsp", out, false);
       out.write("\n");
-      out.write("</body>\n");
+      out.write("<h1>Dziennik</h1>\n");
+      out.write("<p>Projekt na przedmiot Technologie Java Enterprise</p>\n");
+      out.write("<p>Użyte Technologie:</p>\n");
+      out.write("<ol>\n");
+      out.write("<li>Servlets</li>\n");
+      out.write("<li>JavaServer Pages</li>\n");
+      out.write("</ol>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

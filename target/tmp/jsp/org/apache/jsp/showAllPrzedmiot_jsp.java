@@ -65,6 +65,7 @@ public final class showAllPrzedmiot_jsp extends org.apache.jasper.runtime.HttpJs
       org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("przedmiot"), request);
       out.write("\n");
       out.write("<br>\n");
+      out.write("\n");
       out.write("<table class=\"zui-table zui-table-horizontal zui-table-highlight\">\n");
       out.write("    <thead>\n");
       out.write("        <tr>\n");
@@ -83,15 +84,15 @@ public final class showAllPrzedmiot_jsp extends org.apache.jasper.runtime.HttpJs
 			  "<td>" + przedmiot.getGodz() + "</td>"+
 			  "<td>" + "<form  action='UsunPrzedmiot.jsp' method='post'>" +
 			  "<input type='submit' value='Usuń'>" +
-			  "<input class='ukryty' type='text' name='id' value='"+przedmiot.getId()+"'>" +
+			  "<input type='hidden' name='id' value='"+przedmiot.getId()+"'>" +
 			  "</form>" 
 				+
 			  "<form  action='EdytujPrzedmiot.jsp' method='post'>" +
 			  "<input type='submit' value='Edytuj'>" +
-			  "<input class='ukryty' type='text' name='id' value='"+przedmiot.getId()+"'>" +
+			  "<input type='hidden' name='id' value='"+przedmiot.getId()+"'>" +
 			  "</form>" + "</td>" + "</tr>");
-  }
-
+	  }
+  
       out.write("\n");
       out.write("</tbody>\n");
       out.write("</table>\n");

@@ -12,6 +12,7 @@
 <jsp:useBean id="storage" class="kass.service.StorageService" scope="application" />
 <jsp:setProperty name="przedmiot" property="*" />
 <br>
+
 <table class="zui-table zui-table-horizontal zui-table-highlight">
     <thead>
         <tr>
@@ -30,15 +31,15 @@
 			  "<td>" + przedmiot.getGodz() + "</td>"+
 			  "<td>" + "<form  action='UsunPrzedmiot.jsp' method='post'>" +
 			  "<input type='submit' value='Usuń'>" +
-			  "<input class='ukryty' type='text' name='id' value='"+przedmiot.getId()+"'>" +
+			  "<input type='hidden' name='id' value='"+przedmiot.getId()+"'>" +
 			  "</form>" 
 				+
 			  "<form  action='EdytujPrzedmiot.jsp' method='post'>" +
 			  "<input type='submit' value='Edytuj'>" +
-			  "<input class='ukryty' type='text' name='id' value='"+przedmiot.getId()+"'>" +
+			  "<input type='hidden' name='id' value='"+przedmiot.getId()+"'>" +
 			  "</form>" + "</td>" + "</tr>");
-  }
-%>
+	  }
+  %>
 </tbody>
 </table>
 <br>
