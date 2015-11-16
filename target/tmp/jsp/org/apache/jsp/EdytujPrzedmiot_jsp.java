@@ -127,7 +127,7 @@ public final class EdytujPrzedmiot_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("'  /><br />\n");
       out.write("    </p>\n");
       out.write("    <p><input type=\"submit\" value=\" OK \"></p>\n");
-      out.write("    <p class=\"ukryty\"><input type=\"text\" name=\"id\" value='");
+      out.write("    <p><input type=\"hidden\" name=\"id\" value='");
       out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Przedmiot)_jspx_page_context.findAttribute("przedmiot")).getId())));
       out.write("' /></p>\n");
       out.write("</form>\n");

@@ -75,7 +75,7 @@ public final class DodajPrzedmiot_jsp extends org.apache.jasper.runtime.HttpJspB
 storage.dodajPrzedmiot(przedmiot);
 
       out.write("\n");
-      out.write("<p>Do bazy zostal dodany uczeń z poniżczymi danymi: </p>\n");
+      out.write("<p>Do bazy zostal dodany przedmiot z poniższymi danymi: </p>\n");
       out.write("<p>Nazwa:  ");
       out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Przedmiot)_jspx_page_context.findAttribute("przedmiot")).getNazwa())));
       out.write(" </p>\n");

@@ -14,7 +14,7 @@
 <%
 storage.dodajPrzedmiot(przedmiot);
 %>
-<p>Do bazy zostal dodany uczeń z poniżczymi danymi: </p>
+<p>Do bazy zostal dodany przedmiot z poniższymi danymi: </p>
 <p>Nazwa:  <jsp:getProperty name="przedmiot" property="nazwa"></jsp:getProperty> </p>
 <p>Typ:  <jsp:getProperty name="przedmiot" property="typ"></jsp:getProperty> </p>
 <p>Liczba godzin: <jsp:getProperty name="przedmiot" property="godz"></jsp:getProperty></p>
