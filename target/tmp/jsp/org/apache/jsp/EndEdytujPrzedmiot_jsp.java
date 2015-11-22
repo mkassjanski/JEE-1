@@ -3,7 +3,6 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import kass.domain.Przedmiot;
 
 public final class EndEdytujPrzedmiot_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -43,31 +42,10 @@ public final class EndEdytujPrzedmiot_jsp extends org.apache.jasper.runtime.Http
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n");
       out.write("<html>\n");
       out.write("<head>\n");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/header.jsp", out, false);
-      out.write('\n');
-      kass.domain.Przedmiot przedmiot = null;
-      synchronized (session) {
-        przedmiot = (kass.domain.Przedmiot) _jspx_page_context.getAttribute("przedmiot", PageContext.SESSION_SCOPE);
-        if (przedmiot == null){
-          przedmiot = new kass.domain.Przedmiot();
-          _jspx_page_context.setAttribute("przedmiot", przedmiot, PageContext.SESSION_SCOPE);
-        }
-      }
-      out.write('\n');
-      kass.domain.Przedmiot przedmiotTEMP = null;
-      synchronized (session) {
-        przedmiotTEMP = (kass.domain.Przedmiot) _jspx_page_context.getAttribute("przedmiotTEMP", PageContext.SESSION_SCOPE);
-        if (przedmiotTEMP == null){
-          przedmiotTEMP = new kass.domain.Przedmiot();
-          _jspx_page_context.setAttribute("przedmiotTEMP", przedmiotTEMP, PageContext.SESSION_SCOPE);
-        }
-      }
-      out.write('\n');
-      org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("przedmiot"), request);
       out.write('\n');
       kass.service.StorageService storage = null;
       synchronized (application) {
@@ -77,23 +55,24 @@ public final class EndEdytujPrzedmiot_jsp extends org.apache.jasper.runtime.Http
           _jspx_page_context.setAttribute("storage", storage, PageContext.APPLICATION_SCOPE);
         }
       }
+      out.write('\n');
+      kass.domain.Przedmiot przedmiot = null;
+      synchronized (session) {
+        przedmiot = (kass.domain.Przedmiot) _jspx_page_context.getAttribute("przedmiot", PageContext.SESSION_SCOPE);
+        if (przedmiot == null){
+          przedmiot = new kass.domain.Przedmiot();
+          _jspx_page_context.setAttribute("przedmiot", przedmiot, PageContext.SESSION_SCOPE);
+        }
+      }
       out.write("\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("<title>Insert title here</title>\n");
+      out.write("<title>Komunikat - Edycja przedmiotu</title>\n");
       out.write("</head>\n");
       out.write("<body>\n");
-      out.write(" ");
-
-                    for (Przedmiot przedmiotTEM : storage.getAllPrzedmiot()) {
-                        if (przedmiotTEM.getId() == przedmiot.getId()) {
-                        	przedmiot.setId(przedmiotTEM.getId());
-                            break;
-                        }
-                    }
- 					Przedmiot nowy = new Przedmiot(przedmiot.getNazwa(), przedmiot.getTyp(), przedmiot.getGodz());
- 					storage.edytujPrzedmiot(przedmiot, nowy);
-            
+      out.write("   ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${storage.edytujPrzedmiot(przedmiot)}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\n");
+      out.write("            \n");
       out.write("            <h1>Przedmiot został zaktualizowany.</h1>\n");
       out.write("<form  action='showAllPrzedmiot.jsp'>\n");
       out.write("<input type='submit' value='Zobacz wszystkie przedmioty'>\n");

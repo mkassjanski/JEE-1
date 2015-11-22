@@ -20,8 +20,12 @@ ${storage.dodajUczen(uczen)}
 <p>Plec: ${uczen.plec} </p>
 <p>Pesel: ${uczen.pesel} </p>
     
-<form action="showAllUczen.jsp">
-    <p class="przycisk"><input type="submit" value=" Wróć "></p>
+<form  action='DodajUczen.jsp'>
+<input type='submit' value='Dodaj kolejnych uczniów'>
+</form>
+<br>
+<form  action='showAllUczen.jsp'>
+<input type='submit' value='Zobacz wszystkich uczniów'>
 </form>
 </body>
 </html>

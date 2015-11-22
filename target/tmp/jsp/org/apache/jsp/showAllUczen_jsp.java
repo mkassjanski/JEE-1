@@ -57,7 +57,7 @@ public final class showAllUczen_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("<html>\n");
       out.write("<head>\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("<title>Dodaj ucznia</title>\n");
+      out.write("<title>Lista uczniów</title>\n");
       out.write("</head>\n");
       out.write("<body>\n");
       kass.service.StorageService storage = null;
@@ -91,7 +91,6 @@ public final class showAllUczen_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("    </table>\n");
       out.write("\n");
       out.write("    <form action=\"DodajUczen.jsp\">\n");
-      out.write("\n");
       out.write("        <p class=\"przycisk\"><input type=\"submit\" value=\" Dodaj \"></p>\n");
       out.write("\n");
       out.write("    </form>\n");

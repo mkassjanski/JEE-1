@@ -20,7 +20,7 @@ public class FormDodajPrzedmiot extends HttpServlet  {
 	response.setContentType("text/html");
 	PrintWriter out = response.getWriter();
 	out.println("<html><link rel='stylesheet' type='text/css' href='include/dziennik.css'><body><nav><ul><li><a href='/dziennik'>Home</a></li><li><a href='/dziennik/showAllUczen.jsp'>Lista uczniów</a></li><li><a href='/dziennik/showAllPrzedmiot.jsp'>Lista przedmiotów</a></li></ul></nav></br>" +
-	"<p>Formularz dodania nowy przedmiot</p>"+
+	"<p>Formularz dodania nowego przedmiotu</p>"+
 	"<form action='DodajPrzedmiot.jsp' method='post'>" +
 	"Nazwa: <input type='text' name='nazwa' /> <br />" +
 	"Typ:<br>"+

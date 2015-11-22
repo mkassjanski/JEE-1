@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Dodaj ucznia</title>
+<title>Lista uczniów</title>
 </head>
 <body>
 <jsp:useBean id="storage" class="kass.service.StorageService" scope="application" />
@@ -44,7 +44,6 @@
     </table>
 
     <form action="DodajUczen.jsp">
-
         <p class="przycisk"><input type="submit" value=" Dodaj "></p>
 
     </form>

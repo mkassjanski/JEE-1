@@ -48,19 +48,18 @@ public class StorageService {
 			UczenDB.set(i, uczen);
 		}
 		
-		public void edytujPrzedmiot(Przedmiot oldPrzedmiot, Przedmiot newPrzedmiot){
+		
+		public void edytujPrzedmiot(Przedmiot przedmiot){
 			int i = 0;
 			for (Przedmiot przedmiotTEMP : getAllPrzedmiot()) {
-				if(przedmiotTEMP.getId() == oldPrzedmiot.getId())
+				if(przedmiotTEMP.getId() == przedmiot.getId())
 					break;
 				i++;
 			}
-			newPrzedmiot.setId(oldPrzedmiot.getId());
-			PrzedmiotDB.set(i, newPrzedmiot);
+			PrzedmiotDB.set(i, przedmiot);
 		}
 		
-		
-		
+			
 		public void usunUczen(Uczen uczen){
 			int i = 0;
 			for (Uczen uczenTEMP : getAllUczen()) {

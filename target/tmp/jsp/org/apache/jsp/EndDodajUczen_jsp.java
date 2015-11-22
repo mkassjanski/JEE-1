@@ -88,8 +88,12 @@ public final class EndDodajUczen_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${uczen.pesel}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write(" </p>\n");
       out.write("    \n");
-      out.write("<form action=\"showAllUczen.jsp\">\n");
-      out.write("    <p class=\"przycisk\"><input type=\"submit\" value=\" Wróć \"></p>\n");
+      out.write("<form  action='DodajUczen.jsp'>\n");
+      out.write("<input type='submit' value='Dodaj kolejnych uczniów'>\n");
+      out.write("</form>\n");
+      out.write("<br>\n");
+      out.write("<form  action='showAllUczen.jsp'>\n");
+      out.write("<input type='submit' value='Zobacz wszystkich uczniów'>\n");
       out.write("</form>\n");
       out.write("</body>\n");
       out.write("</html>");
