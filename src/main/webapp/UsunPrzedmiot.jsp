@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Lista przedmitow/title>
 </head>
 <body>
  <jsp:useBean id="przedmiotTEMP" class="kass.domain.Przedmiot" scope="session" />

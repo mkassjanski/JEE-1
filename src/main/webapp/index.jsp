@@ -10,5 +10,6 @@
 <ol>
 <li>Servlets</li>
 <li>JavaServer Pages</li>
+<li>JavaServer Pages Standard Tag Library</li>
 </ol>
 </html>

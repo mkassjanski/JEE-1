@@ -1,6 +1,6 @@
-<%@page import="kass.domain.Uczen"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,44 +8,45 @@
 <title>Dodaj ucznia</title>
 </head>
 <body>
-<jsp:include page="include/header.jsp" />
 <jsp:useBean id="storage" class="kass.service.StorageService" scope="application" />
-<jsp:setProperty name="uczen" property="*" />
-<br>
-<table class="zui-table zui-table-horizontal zui-table-highlight">
+<jsp:include page="include/header.jsp" />
+    <h1>Uczniowie</h1>
+    <table class="zui-table zui-table-horizontal zui-table-highlight">
     <thead>
         <tr>
             <th>Imie</th>
             <th>Nazwisko</th>
             <th>Plec</th>
             <th>Pesel</th>
-            <th>Opcje</th>
+            <th></th>
         </tr>
-    </thead>
+          </thead>
     <tbody>
-<%
-  for (Uczen uczen : storage.getAllUczen()) {
-	  out.println("<tr>");
-	  out.println("<td>" + uczen.getImie() + "</td>"+
-			  "<td>" + uczen.getNazwisko() + "</td>"+
-			  "<td>" + uczen.getPlec() + "</td>"+
-			  "<td>" + uczen.getPesel() + "</td>"+
-			  "<td>" + "<form  action='UsunUczen.jsp' method='post'>" +
-			  "<input type='submit' value='Usuń'>" +
-			  "<input type='hidden' name='id' value='"+uczen.getId()+"'>" +
-			  "</form>" 
-				+
-			  "<form  action='EdytujUczen.jsp' method='post'>" +
-			  "<input type='submit' value='Edytuj'>" +
-			  "<input type='hidden' name='id' value='"+uczen.getId()+"'>" +
-			  "</form>" + "</td>" + "</tr>");
-  }
-%>
-</tbody>
-</table>
-<br>
- <form  action='http://localhost:8080/dziennik/form'>
-<input type='submit' value='Dodaj ucznia'>
-</form>
+    <c:forEach var="uczen" items="${storage.getAllUczen()}">
+        <tr>
+            <td>${uczen.imie}</td>
+            <td>${uczen.nazwisko}</td>
+            <td>${uczen.plec}</td>
+             <td>${uczen.pesel}</td>
+            <td>
+                    <form action="EdytujUczen.jsp">
+                        <input type="submit" value="Edytuj">
+                        <input type=hidden name="id" value=${uczen.id}>
+                    </form>
+                    <form action="UsunUczen.jsp">
+                        <input type="submit" value="Usuń">
+                        <input type="hidden" name="id" value=${uczen.id}>
+                    </form>
+              </td>
+        </tr>
+    </c:forEach>
+    </tbody>
+    </table>
+
+    <form action="DodajUczen.jsp">
+
+        <p class="przycisk"><input type="submit" value=" Dodaj "></p>
+
+    </form>
 </body>
 </html>

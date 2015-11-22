@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class DodajUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class blad_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -46,26 +46,16 @@ public final class DodajUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("<head>\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("<title>Dodaj ucznia</title>\n");
+      out.write("<title>Blad prowadzania danych</title>\n");
       out.write("</head>\n");
       out.write("<body>\n");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/header.jsp", out, false);
       out.write("\n");
-      out.write("    <h1>Dodaj uczen</h1>\n");
+      out.write("<p>Wprowadzono niepoprawe dane!</p>\n");
+      out.write("<form  action='DodajUczen.jsp'>\n");
+      out.write("<input type='submit' value='Wróć'>\n");
+      out.write("</form>\n");
       out.write("\n");
-      out.write("    <form action=\"walidacjaUczen\">\n");
-      out.write("\n");
-      out.write("      <p>\n");
-      out.write("          <label>Imie: &nbsp;</label><input type=\"text\" name=\"imie\" value=\"\" /><br />\n");
-      out.write("          <label>Nazwisko: &nbsp;</label><input type=\"text\" name=\"nazwisko\" value=\"\" /><br />\n");
-      out.write("          <label>Plec: &nbsp;</label> <br />\n");
-      out.write("          <input type=\"radio\" name=\"plec\" value=\"Chlopak\" />Chlopak <br />\n");
-      out.write("          <input type=\"radio\" name=\"plec\" value=\"Dziewczyna\" />Dziewczyna <br />\n");
-      out.write("          <label>Pesel: &nbsp;</label><input type=\"text\" name=\"pesel\" value=\"\" /><br />\n");
-      out.write("      </p>\n");
-      out.write("      <p class=\"przycisk\"><input type=\"submit\" value=\" OK \"></p>\n");
-      out.write("\n");
-      out.write("    </form>\n");
       out.write("</body>\n");
       out.write("</html>");
     } catch (Throwable t) {

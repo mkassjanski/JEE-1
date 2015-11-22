@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class EndEdytujUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class EndDodajUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -42,10 +42,24 @@ public final class EndEdytujUczen_jsp extends org.apache.jasper.runtime.HttpJspB
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n");
       out.write("<html>\n");
       out.write("<head>\n");
+      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("<title>Insert title here</title>\n");
+      out.write("</head>\n");
+      out.write("<body>\n");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/header.jsp", out, false);
+      out.write('\n');
+      kass.domain.Uczen uczen = null;
+      synchronized (request) {
+        uczen = (kass.domain.Uczen) _jspx_page_context.getAttribute("uczen", PageContext.REQUEST_SCOPE);
+        if (uczen == null){
+          uczen = new kass.domain.Uczen();
+          _jspx_page_context.setAttribute("uczen", uczen, PageContext.REQUEST_SCOPE);
+        }
+      }
       out.write('\n');
       kass.service.StorageService storage = null;
       synchronized (application) {
@@ -56,26 +70,26 @@ public final class EndEdytujUczen_jsp extends org.apache.jasper.runtime.HttpJspB
         }
       }
       out.write('\n');
-      kass.domain.Uczen uczen = null;
-      synchronized (request) {
-        uczen = (kass.domain.Uczen) _jspx_page_context.getAttribute("uczen", PageContext.REQUEST_SCOPE);
-        if (uczen == null){
-          uczen = new kass.domain.Uczen();
-          _jspx_page_context.setAttribute("uczen", uczen, PageContext.REQUEST_SCOPE);
-        }
-      }
+      out.write('\n');
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${storage.dodajUczen(uczen)}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\n");
-      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("<title>Komunikat - Edycja ucznia</title>\n");
-      out.write("</head>\n");
-      out.write("<body>\n");
-      out.write("   ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${storage.edytujUczen(uczen)}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\n");
-      out.write("            \n");
-      out.write("            <h1>Uczeń został zaktualizowany.</h1>\n");
-      out.write("<form  action='showAllUczen.jsp'>\n");
-      out.write("<input type='submit' value='Zobacz wszystkich ucznów'>\n");
+      out.write("<p>Dodano: </p>\n");
+      out.write("<p>Imie: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${uczen.imie}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(" </p>\n");
+      out.write("<p>Nazwisko: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${uczen.nazwisko}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(" </p>\n");
+      out.write("<p>Plec: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${uczen.plec}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(" </p>\n");
+      out.write("<p>Pesel: ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${uczen.pesel}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(" </p>\n");
+      out.write("    \n");
+      out.write("<form action=\"showAllUczen.jsp\">\n");
+      out.write("    <p class=\"przycisk\"><input type=\"submit\" value=\" Wróć \"></p>\n");
       out.write("</form>\n");
       out.write("</body>\n");
       out.write("</html>");

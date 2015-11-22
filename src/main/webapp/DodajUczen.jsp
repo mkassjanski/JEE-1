@@ -4,27 +4,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Dodaj ucznia</title>
 </head>
 <body>
 <jsp:include page="include/header.jsp" />
-<jsp:useBean id="uczen" class="kass.domain.Uczen" scope="session" />
-<jsp:setProperty name="uczen" property="*" />
-<jsp:useBean id="storage" class="kass.service.StorageService" scope="application" />
-<%
-storage.dodajUczen(uczen);
-%>
-<p>Do bazy zostal dodany uczeń z poniżczymi danymi: </p>
-<p>Imie:  <jsp:getProperty name="uczen" property="imie"></jsp:getProperty> </p>
-<p>Nazwisko:  <jsp:getProperty name="uczen" property="nazwisko"></jsp:getProperty> </p>
-<p>Plec: <jsp:getProperty name="uczen" property="plec"></jsp:getProperty></p>
-<p>Pesel: <jsp:getProperty name="uczen" property="pesel"></jsp:getProperty></p>
-<form  action='http://localhost:8080/dziennik/form'>
-<input type='submit' value='Dodaj kolejnego ucznia'>
-</form>
-<br>
-<form  action='showAllUczen.jsp'>
-<input type='submit' value='Zobacz wszystkich ucznów'>
-</form>
+    <h1>Dodaj uczen</h1>
+
+    <form action="walidacjaUczen">
+
+      <p>
+          <label>Imie: &nbsp;</label><input type="text" name="imie" value="" /><br />
+          <label>Nazwisko: &nbsp;</label><input type="text" name="nazwisko" value="" /><br />
+          <label>Plec: &nbsp;</label> <br />
+          <input type="radio" name="plec" value="Chlopak" />Chlopak <br />
+          <input type="radio" name="plec" value="Dziewczyna" />Dziewczyna <br />
+          <label>Pesel: &nbsp;</label><input type="text" name="pesel" value="" /><br />
+      </p>
+      <p class="przycisk"><input type="submit" value=" OK "></p>
+
+    </form>
 </body>
 </html>

@@ -53,6 +53,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<ol>\n");
       out.write("<li>Servlets</li>\n");
       out.write("<li>JavaServer Pages</li>\n");
+      out.write("<li>JavaServer Pages Standard Tag Library</li>\n");
       out.write("</ol>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

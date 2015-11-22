@@ -38,15 +38,14 @@ public class StorageService {
 		}
 		
 		
-		public void edytujUczen(Uczen oldUczen, Uczen newUczen){
+		public void edytujUczen(Uczen uczen){
 			int i = 0;
 			for (Uczen uczenTEMP : getAllUczen()) {
-				if(uczenTEMP.getId() == oldUczen.getId())
+				if(uczenTEMP.getId() == uczen.getId())
 					break;
 				i++;
 			}
-			newUczen.setId(oldUczen.getId());
-			UczenDB.set(i, newUczen);
+			UczenDB.set(i, uczen);
 		}
 		
 		public void edytujPrzedmiot(Przedmiot oldPrzedmiot, Przedmiot newPrzedmiot){
