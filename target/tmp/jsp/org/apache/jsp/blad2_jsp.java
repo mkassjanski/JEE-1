@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class blad_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class blad2_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -52,7 +52,7 @@ public final class blad_jsp extends org.apache.jasper.runtime.HttpJspBase
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "include/header.jsp", out, false);
       out.write("\n");
       out.write("<p>Wprowadzono niepoprawe dane!</p>\n");
-      out.write("<form  action='showAllUczen.jsp'>\n");
+      out.write("<form  action='showAllPrzedmiot.jsp'>\n");
       out.write("<input type='submit' value='Wróć'>\n");
       out.write("</form>\n");
       out.write("\n");

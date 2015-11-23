@@ -53,7 +53,7 @@ public final class DodajUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("    <h1>Dodaj uczen</h1>\n");
       out.write("\n");
-      out.write("    <form action=\"walidacjaUczen\">\n");
+      out.write("    <form action=\"walidacjaUczenA\">\n");
       out.write("\n");
       out.write("      <p>\n");
       out.write("          <label>Imie: &nbsp;</label><input type=\"text\" name=\"imie\" value=\"\" /><br />\n");

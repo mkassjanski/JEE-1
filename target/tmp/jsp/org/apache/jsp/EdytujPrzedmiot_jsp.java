@@ -101,7 +101,7 @@ public final class EdytujPrzedmiot_jsp extends org.apache.jasper.runtime.HttpJsp
         return;
       out.write("\n");
       out.write("\n");
-      out.write("<form action=\"walidacjaPrzedmiot2\">\n");
+      out.write("<form action=\"walidacjaPrzedmiotU\">\n");
       out.write("    <p>\n");
       out.write("        <label>Nazwa: &nbsp;</label><input type=\"text\" name=\"nazwa\" value=");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${przedmiot.getNazwa()}", java.lang.String.class, (PageContext)_jspx_page_context, null));

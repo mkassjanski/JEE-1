@@ -101,7 +101,7 @@ public final class EdytujUczen_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("\n");
       out.write("\n");
-      out.write("<form action=\"walidacjaUczen2\">\n");
+      out.write("<form action=\"walidacjaUczenU\">\n");
       out.write("    <p>\n");
       out.write("        <label>Imie: &nbsp;</label><input type=\"text\" name=\"imie\" value=");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${uczen.getImie()}", java.lang.String.class, (PageContext)_jspx_page_context, null));

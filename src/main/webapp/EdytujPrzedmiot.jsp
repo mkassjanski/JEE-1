@@ -25,7 +25,7 @@
     </c:if>
 </c:forEach>
 
-<form action="walidacjaPrzedmiot2">
+<form action="walidacjaPrzedmiotU">
     <p>
         <label>Nazwa: &nbsp;</label><input type="text" name="nazwa" value=${przedmiot.getNazwa()} /><br />
         <label>Typ: &nbsp;</label> <br />

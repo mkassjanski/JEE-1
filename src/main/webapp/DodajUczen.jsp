@@ -10,7 +10,7 @@
 <jsp:include page="include/header.jsp" />
     <h1>Dodaj uczen</h1>
 
-    <form action="walidacjaUczen">
+    <form action="walidacjaUczenA">
 
       <p>
           <label>Imie: &nbsp;</label><input type="text" name="imie" value="" /><br />

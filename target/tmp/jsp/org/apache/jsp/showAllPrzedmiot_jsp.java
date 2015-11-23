@@ -89,7 +89,7 @@ public final class showAllPrzedmiot_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("    </tbody>\n");
       out.write("    </table>\n");
       out.write("\n");
-      out.write("    <form action=\"form2\">\n");
+      out.write("    <form action=\"dodajPrzedmiot\">\n");
       out.write("        <p class=\"przycisk\"><input type=\"submit\" value=\" Dodaj \"></p>\n");
       out.write("\n");
       out.write("    </form>\n");

@@ -41,7 +41,7 @@
     </tbody>
     </table>
 
-    <form action="form2">
+    <form action="dodajPrzedmiot">
         <p class="przycisk"><input type="submit" value=" Dodaj "></p>
 
     </form>

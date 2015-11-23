@@ -9,7 +9,7 @@
 <body>
 <jsp:include page="include/header.jsp" />
 <p>Wprowadzono niepoprawe dane!</p>
-<form  action='showAllUczen.jsp'>
+<form  action='showAllPrzedmiot.jsp'>
 <input type='submit' value='Wróć'>
 </form>
 

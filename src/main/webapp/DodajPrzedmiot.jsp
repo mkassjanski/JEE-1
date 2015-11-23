@@ -18,7 +18,7 @@ storage.dodajPrzedmiot(przedmiot);
 <p>Nazwa:  <jsp:getProperty name="przedmiot" property="nazwa"></jsp:getProperty> </p>
 <p>Typ:  <jsp:getProperty name="przedmiot" property="typ"></jsp:getProperty> </p>
 <p>Liczba godzin: <jsp:getProperty name="przedmiot" property="godz"></jsp:getProperty></p>
-<form  action='http://localhost:8080/dziennik/form2'>
+<form  action='dodajPrzedmiot'>
 <input type='submit' value='Dodaj kolejne przedmioty'>
 </form>
 <br>

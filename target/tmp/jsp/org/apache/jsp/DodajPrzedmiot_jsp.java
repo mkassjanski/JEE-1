@@ -85,7 +85,7 @@ storage.dodajPrzedmiot(przedmiot);
       out.write("<p>Liczba godzin: ");
       out.write(org.apache.jasper.runtime.JspRuntimeLibrary.toString((((kass.domain.Przedmiot)_jspx_page_context.findAttribute("przedmiot")).getGodz())));
       out.write("</p>\n");
-      out.write("<form  action='http://localhost:8080/dziennik/form2'>\n");
+      out.write("<form  action='dodajPrzedmiot'>\n");
       out.write("<input type='submit' value='Dodaj kolejne przedmioty'>\n");
       out.write("</form>\n");
       out.write("<br>\n");
